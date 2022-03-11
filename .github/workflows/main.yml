@@ -14,4 +14,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           run: npx cypress run
-          run: node cucumber-html-report.js
+          
+      - name: Generate Report
+        run: node cucumber-html-report.js
