@@ -7,11 +7,9 @@
     "clean:reports": "rm -R -f cypress/reports",
     "pretest": "npm run clean:reports",
     "scripts": "cypress run",
-    "combine-reports": "mochawesome-merge --reportDir cypress/reports/mocha > cypress/reports/mocha/mochawesome.html",
-    "generate-report": "marge cypress/reports/mocha/mochawesome.json -f report -o cypress/reports/mocha",
-    "posttest": "npm run combine-reports && npm run generate-report",
     "test": "npm run scripts || npm run posttest",
-    "lint": ""
+    "posttest": "node cucumber-html-report.js && npm run open_report",
+    "open_report" : "start cypress/reports/cucumber-htmlreport.html/index.html"
   },
   "keywords": [],
   "author": "",
