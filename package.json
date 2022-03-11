@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "posttest": "node cucumber-html-report.js && npm run open_report",
+    "open_report" : "start cypress/reports/cucumber-htmlreport.html/index.html",
     "clean:reports": "rm -R -f cypress/reports",
     "pretest": "npm run clean:reports",
     "scripts": "cypress run",
     "test0": "npm run scripts || npm run posttest",
-    "test": "npm run scripts",
-    "posttest": "node cucumber-html-report.js && npm run open_report",
-    "open_report" : "start cypress/reports/cucumber-htmlreport.html/index.html"
+    "test": "npm run scripts"
   },
   "keywords": [],
   "author": "",
