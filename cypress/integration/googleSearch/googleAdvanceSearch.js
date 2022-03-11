@@ -25,7 +25,7 @@ Then('I can see result about Elon Musk', () => {
     .should('include', 'as_q=Elon+Musk')
     .should('include', 'lr=lang_it')
     .should('include', 'as_qdr=w');
-  page.getSearch().should('have.value', 'Elon Musk');
+  page.getSearch().should('have.value', 'Elon Musik');
   page.getLanguage().contains('Search Italian pages');
   page.getTime().contains('Past week');
 });
