@@ -15,3 +15,6 @@ jobs:
 
       - name: Run Cypress       
         run: npm run test      
+
+      - name: Generate Report
+        run: node cucumber-html-report.js
