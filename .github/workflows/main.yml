@@ -13,7 +13,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          run: npm run test
+          start: npm run test
           
       - name: Generate Report
         run: node cucumber-html-report.js
