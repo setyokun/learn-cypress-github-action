@@ -1,0 +1,23 @@
+name: Cypress Tests run on Github Action Local
+
+on: [push]
+
+jobs:
+  cypress-run-local:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # install depencies for headless mode
+      - name: install xvfb
+        run: apt update && apt install libgconf-2-4 libatk1.0-0 libatk-bridge2.0-0 libgdk-pixbuf2.0-0 libgtk-3-0 libgbm-dev libnss3-dev libxss-dev libasound2 xvfb -y
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress       
+        run: npm run test      
+
+      - name: Generate Report
+        run: node cucumber-html-report.js
