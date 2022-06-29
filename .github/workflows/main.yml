@@ -18,3 +18,9 @@ jobs:
 
       - name: Generate Report
         run: node cucumber-html-report.js
+        
+      - name: Upload Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: /reports
